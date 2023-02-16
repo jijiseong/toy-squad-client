@@ -1,0 +1,15 @@
+.account_input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 1.4rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+.account_input:last-of-type {
+  margin-bottom: 3rem;
+}
+.input_label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
