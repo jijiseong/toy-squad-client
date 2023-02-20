@@ -3,21 +3,19 @@ import {
   MyPageContainer,
   MyPageUserInfo,
   UserInfoHeader,
-  UserContact,
-  UserInfoBody,
-  UserIntro,
-  MyPageManagement,
+  UserInfoMenu,
+  UserInfoMainInfo,
+  MyPageContent,
+  UserInfoMenuList,
   UserName,
   UserPosition,
-  UserLevel,
-  UserSpec,
   UserProfileImg,
-} from "../styles/mypage.style";
+} from "../styles/mypage/mypage.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import IMGDefaultUserProfile from "../assets/images/user/default_profile.png";
-import IMGRatingIcon from "../assets/images/user/rating.svg";
-import IMGHeartIcon from "../assets/images/user/heart.svg";
+import { Route, Routes } from "react-router-dom";
+import User from "./user";
 
 const MyPage = () => {
   return (
@@ -25,61 +23,44 @@ const MyPage = () => {
       <div className="common_wrapper">
         <MyPageTitle>My 토이스쿼드</MyPageTitle>
         <MyPageContainer>
-          <MyPageUserInfo className="bg_color_white">
+          <MyPageUserInfo>
             <UserInfoHeader>
-              <div>
-                <UserName>석지웅 </UserName>
-                <UserPosition> 프론트엔드 개발자</UserPosition>
-              </div>
-              <UserProfileImg>
-                <img
-                  src={IMGDefaultUserProfile}
-                  alt="default user profile image"
-                />
-              </UserProfileImg>
+              <UserInfoMainInfo>
+                <div>
+                  <UserName>석지웅 </UserName>
+                  <UserPosition>프론트엔드 개발자</UserPosition>
+                </div>
+                <UserProfileImg>
+                  <img
+                    src={IMGDefaultUserProfile}
+                    alt="default user profile image"
+                  />
+                </UserProfileImg>
+              </UserInfoMainInfo>
             </UserInfoHeader>
-            <UserContact>
+            <UserInfoMenu>
               <div>
-                <FontAwesomeIcon icon={faPhone} />
-                <span>010-9019-2172</span>
+                <UserInfoMenuList>내 정보</UserInfoMenuList>
+                <UserInfoMenuList>프로젝트 관리</UserInfoMenuList>
+                <UserInfoMenuList>유저 관리</UserInfoMenuList>
+                <UserInfoMenuList>알림 설정</UserInfoMenuList>
               </div>
               <div>
-                <FontAwesomeIcon icon={faEnvelope} />
-                <span>godboy4256@gmail.com</span>
+                <UserInfoMenuList>공지사항</UserInfoMenuList>
+                <UserInfoMenuList>개인정보 처리방침</UserInfoMenuList>
+                <UserInfoMenuList>토이스쿼드 이용약관</UserInfoMenuList>
               </div>
-            </UserContact>
-            <UserInfoBody></UserInfoBody>
+              <div>
+                <UserInfoMenuList>계정탈퇴</UserInfoMenuList>
+                <UserInfoMenuList>로그아웃</UserInfoMenuList>
+              </div>
+            </UserInfoMenu>
           </MyPageUserInfo>
-          <MyPageManagement className="bg_color_white">
-            <UserIntro>
-              안녕하세요. 6개월째 현업에서 일하고 있는 신입 프론트엔드
-              개발자입니다. 사이드 프로젝트하는 것을 좋아해서 가입하게
-              되었습니다.
-            </UserIntro>
-            <div className="flex_box">
-              <UserSpec>
-                <div>평점</div>
-                <div>
-                  <img src={IMGRatingIcon} alt="user rating icon" />
-                  5.0
-                </div>
-              </UserSpec>
-              <UserSpec>
-                <div>포지션 레벨</div>
-                <div>
-                  <UserLevel>1</UserLevel>
-                  입문
-                </div>
-              </UserSpec>
-              <UserSpec>
-                <div>좋아요</div>
-                <div>
-                  <img src={IMGHeartIcon} alt="user rating icon" />
-                  100
-                </div>
-              </UserSpec>
-            </div>
-          </MyPageManagement>
+          <MyPageContent>
+            <Routes>
+              <Route path="/" element={<User />} />
+            </Routes>
+          </MyPageContent>
         </MyPageContainer>
       </div>
     </div>
