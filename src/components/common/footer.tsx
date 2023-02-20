@@ -7,11 +7,10 @@ const Container = styled.div`
   height: 300px;
   display: flex;
   justify-content: center;
-
   footer {
     width: 1110px;
     img {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
   }
 `;
