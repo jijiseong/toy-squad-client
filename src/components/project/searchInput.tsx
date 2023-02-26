@@ -16,6 +16,13 @@ const Container = styled.div`
     width: 593px;
     height: 67px;
     border-radius: 20px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    ::placeholder {
+      font-size: 18px;
+      margin-left: 35px;
+    }
   }
 `;
 const SearchIcon = styled.div`

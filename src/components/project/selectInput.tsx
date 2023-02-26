@@ -7,7 +7,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 type SelectInputType = {
-  title: string;
+  title?: string;
   defaultValue: string;
   options?: { label: string; value: string }[];
 };
@@ -80,7 +80,7 @@ export const SelectInput = ({
 }: SelectInputType) => {
   return (
     <Container>
-      <h4>{title}</h4>
+      {title && <h4>{title}</h4>}
       <Select
         defaultValue={defaultValue}
         options={options}
