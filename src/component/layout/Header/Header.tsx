@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import IMGLogo from "../../assets/images/common/logo.svg";
 import IMGSearch from "../../assets/images/common/search.svg";
